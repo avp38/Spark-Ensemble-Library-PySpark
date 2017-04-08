@@ -73,6 +73,76 @@ appendColumn(ensemble_test, c1_predict_labels_test)
 appendColumn(ensemble_train, c1_predict_labels_train)
 
 
+# C2 
+# Build the Model
+model = LogisticRegressionWithSGD.train(train_data, regParam=0.1)
+
+# Predict Labels
+c1_predict_labels_test_rdd = test_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_train_rdd = train_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_test = c1_predict_labels_test_rdd.collect()
+c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
+
+# Append Labels
+appendColumn(ensemble_test, c1_predict_labels_test)
+appendColumn(ensemble_train, c1_predict_labels_train)
+
+
+# C3 
+# Build the Model
+model = LogisticRegressionWithSGD.train(train_data, regParam=0.001)
+
+# Predict Labels
+c1_predict_labels_test_rdd = test_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_train_rdd = train_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_test = c1_predict_labels_test_rdd.collect()
+c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
+
+# Append Labels
+appendColumn(ensemble_test, c1_predict_labels_test)
+appendColumn(ensemble_train, c1_predict_labels_train)
+
+
+# C4 
+# Build the Model
+model = LogisticRegressionWithSGD.train(train_data, regParam=1, regType='l1')
+
+# Predict Labels
+c1_predict_labels_test_rdd = test_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_train_rdd = train_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_test = c1_predict_labels_test_rdd.collect()
+c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
+
+# Append Labels
+appendColumn(ensemble_test, c1_predict_labels_test)
+appendColumn(ensemble_train, c1_predict_labels_train)
+
+
+# C5 
+# Build the Model
+model = LogisticRegressionWithSGD.train(train_data, regParam=0.1, regType='l1')
+
+# Predict Labels
+c1_predict_labels_test_rdd = test_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_train_rdd = train_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_test = c1_predict_labels_test_rdd.collect()
+c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
+
+# Append Labels
+appendColumn(ensemble_test, c1_predict_labels_test)
+appendColumn(ensemble_train, c1_predict_labels_train)
+
+
+# C6 
+# Build the Model
+model = LogisticRegressionWithSGD.train(train_data, regParam=10, regType='none')
+
+# Predict Labels
+c1_predict_labels_test_rdd = test_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_train_rdd = train_data.map(lambda p: ( model.predict(p.features)))
+c1_predict_labels_test = c1_predict_labels_test_rdd.collect()
+c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
+
 
 
 sc.stop() 
