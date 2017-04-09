@@ -1,2 +1,1 @@
-/home/ajit/software/spark/python/lib/pyspark.zip/pyspark/mllib/classification.py:313: UserWarning: Deprecated in 2.0.0. Use ml.classification.LogisticRegression or LogisticRegressionWithLBFGS.
-Error 0.125
+0.0
