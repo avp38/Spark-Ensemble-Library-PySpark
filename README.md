@@ -21,9 +21,14 @@ several choices to learn base classifiers:
 
 The Stacking is a general framework. We can plug in different classifiers and learning approaches to create the first-level features and transform the data into another feature space. 
 
-**Example.** We show the basic procedure of Stacking using the data below. We use 2 first-level classifier. Table 1 shows the points in the data set. Table 2 shows the new data generated from the Training Data. After applying the two classifiers we can construct a new data set based on the output of base classifiers. Since there are two base classifiers, our new x_new has two dimensions. The first one is the predicted label from the first classifier and the second one is the predicted label from the second classifier. The new dataset is used for the second-level classifier. 
+**Example.** We show the basic procedure of Stacking using the data below. We use 2 first-level classifier. Table 1 shows the points in the data set. 
 
 ![Alt text](https://cloud.githubusercontent.com/assets/10396285/24836137/d6006136-1ce1-11e7-9ba1-e16c1ba20501.png "Example")
+
+Table 2 shows the new data generated from the Training Data. After applying the two classifiers we can construct a new data set based on the output of base classifiers. Since there are two base classifiers, our new x_new has two dimensions. The first one is the predicted label from the first classifier and the second one is the predicted label from the second classifier. The new dataset is used for the second-level classifier. 
+
+![Alt text](https://cloud.githubusercontent.com/assets/10396285/24836138/d88d8500-1ce1-11e7-937b-40f51875c436.png "Example 2")
+
 
 **References.**
 
