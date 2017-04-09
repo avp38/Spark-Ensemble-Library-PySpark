@@ -41,15 +41,7 @@ def appendColumn(ensemble_data, label_data):
 
 def writeToFile(en_data, filename):
 	f = open(filename,'w+')
-	for r in range(0,len(en_data),1):
-		for c in range(0,len(en_data[0]),1):		    
-		    if (c == len(en_data[0])-1):
-		    	if(r==(len(en_data)-1)):
-		    		f.write(str(en_data[r][c]))
-		    	else:
-		        	f.write(str(en_data[r][c])+"\n")
-	        else:
-	        	f.write(str(en_data[r][c])+" ")
+	f.writelines(' '.join(str(j) for j in i) + '\n' for i in en_data)
 	f.close()
 
 
@@ -97,7 +89,6 @@ c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
 # Append Labels
 appendColumn(ensemble_test, c1_predict_labels_test)
 appendColumn(ensemble_train, c1_predict_labels_train)
-print(ensemble_test)
 
 # C2 
 # Build the Model
@@ -112,8 +103,6 @@ c1_predict_labels_train = c1_predict_labels_train_rdd.collect()
 # Append Labels
 appendColumn(ensemble_test, c1_predict_labels_test)
 appendColumn(ensemble_train, c1_predict_labels_train)
-print("---------------------")
-print(ensemble_test)
 
 # C3 
 # Build the Model
@@ -365,10 +354,7 @@ for j in range(0, len(train_features), 1):
 # Append Labels
 appendColumn(ensemble_test, gbt_test_predict_label)
 appendColumn(ensemble_train, gbt_train_predict_label)
-print("--------------")
-print(ensemble_test)
-print(len(ensemble_test))
-print(len(ensemble_test[0]))
+
 #----------
 # Save Intermediate Ensemble Output
 writeToFile(ensemble_train, ensemble_train_file)
@@ -386,6 +372,6 @@ ens_test_data = data.map(parsePoint)
 model = SVMWithSGD.train(ens_train_data)
 labelsAndPreds = ens_test_data.map(lambda p: (p.label, model.predict(p.features)))
 testErr = labelsAndPreds.filter(lambda (v,p): v!=p).count()/float(ens_test_data.count())
-print("Ensemble Classifier Error " + str(testErr))
+print("Ensemble Classifier Error: " + str(testErr))
 
 sc.stop() 
