@@ -1,4 +1,4 @@
-# Execution: ./bin/spark-submit --master local[8] --driver-memory 12g --executor-memory 12g ~/Desktop/spark_lib/ensemble_breast_cancer.py > ~/Desktop/spark_lib/output/breast_cancer.op
+# Execution: ./bin/spark-submit --master local[8] --driver-memory 1g --executor-memory 1g ~/Desktop/spark_lib/ensemble_breast_cancer.py > ~/Desktop/spark_lib/output/breast_cancer.op
 
 
 

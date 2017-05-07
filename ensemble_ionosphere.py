@@ -1,4 +1,4 @@
-# Execution: ./bin/spark-submit --master local[8] --driver-memory 12g --executor-memory 12g ~/Desktop/spark_lib/ensemble_ionosphere.py > ~/Desktop/spark_lib/output/ionosphere.op
+# Execution: ./bin/spark-submit --master local[8] --driver-memory 1g --executor-memory 1g ~/Desktop/spark_lib/ensemble_ionosphere.py > ~/Desktop/spark_lib/output/ionosphere.op
 
 
 
