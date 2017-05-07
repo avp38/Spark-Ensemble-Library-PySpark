@@ -1,4 +1,4 @@
-# Execution: ./bin/spark-submit --master local[8] --driver-memory 1g --executor-memory 1g ~/Desktop/spark_lib/ensemble_breast_cancer.py > ~/Desktop/spark_lib/output/breast_cancer.op
+# Execution: ./bin/spark-submit --master local[8] --driver-memory 12g --executor-memory 12g ~/Desktop/spark_lib/ensemble_breast_cancer.py > ~/Desktop/spark_lib/output/breast_cancer.op
 
 
 
@@ -20,8 +20,8 @@ from numpy import array
 DEBUG = 0
 
 # Parameters
-train_file = "/home/ajit/Desktop/spark_lib/dataset/breast_cancer.data.train"
-test_file = "/home/ajit/Desktop/spark_lib/dataset/breast_cancer.data.test"
+train_file = "/home/ajit/Desktop/spark_lib/dataset/breast_cancer/breast_cancer.data.train"
+test_file = "/home/ajit/Desktop/spark_lib/dataset/breast_cancer/breast_cancer.data.test"
 ensemble_train_file = "/home/ajit/Desktop/spark_lib/intermediate_output/breast_cancer.ens.train"
 ensemble_test_file = "/home/ajit/Desktop/spark_lib/intermediate_output/breast_cancer.ens.test"
 
