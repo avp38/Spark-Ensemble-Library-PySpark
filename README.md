@@ -30,6 +30,19 @@ Table 2 shows the new data generated from the Training Data. After applying the 
 ![Alt text](https://cloud.githubusercontent.com/assets/10396285/24836138/d88d8500-1ce1-11e7-937b-40f51875c436.png "Example 2")
 
 
+**Datasets Used.**
+
+  ● Ionosphere Dataset
+
+  ● Breast Cancer Dataset
+
+  ● MNIST Handwritten Digit Database
+
+  ● CIFAR-10 Dataset
+
+  ● Synthetic Dataset
+
+
 **References.**
 
 [1] P.Smyth and D.Wolpert. Linearly combining density estimators via stacking . Machine Learning, 36(1-2):59–83, 1999.
